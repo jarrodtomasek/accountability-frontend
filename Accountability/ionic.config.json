@@ -1,0 +1,7 @@
+{
+  "name": "Accountability",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
