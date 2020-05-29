@@ -1,0 +1,51 @@
+<ion-header>
+    <h1 style="font-family: cursive; text-align: center;">
+        Count Me In
+    </h1>
+</ion-header>
+<ion-content padding>
+    <hr>
+    <br>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name <span class="required-field">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="firstName" id="firstName" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name <span class="required-field">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="lastName" id="lastName" required>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row"> -->
+            <div class="form-group">
+                <label for="email">Email Address <span class="required-field">*</span></label>
+                <input type="email" class="form-control form-control-lg" formControlName="email" id="email" required>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <div class="form-group">
+                <label for="password">Password <span class="required-field">*</span></label>
+                <input type="password" class="form-control form-control-lg" formControlName="password" id="password" required>
+                <small id="passwordHelp" class="form-text text-muted">Your password must be 8-20 characters long and must
+                    not contain spaces.</small>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password <span class="required-field">*</span></label>
+                <input type="password" class="form-control form-control-lg" formControlName="confirmPassword" id="confirmPassword"
+                    required>
+                    <small id="confirmPasswordHelp" class="form-text text-muted">This password must be the same as the password above.</small>
+            </div>
+        <!-- </div> -->
+    </form>
+    <br>
+    <hr>
+    <button ion-button block (click)="btnRegister()" color="secondary" type="submit" [disabled]="!registerForm.valid">Register</button>
+
+</ion-content>

@@ -3,8 +3,40 @@
         Login Page
     </ion-navbar>
 </ion-header> -->
-<ion-content padding>
-    <h1>
-        <p>Login Page</p>
+<ion-header>
+    <h1 style="font-family: cursive; text-align: center;">
+        Count Me In
     </h1>
+</ion-header>
+
+<ion-content padding>
+    <!-- Angular Reactive Form using Bootstrap-->
+    <hr>
+    <br>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control form-control-lg" formControlName="email" id="email"
+                aria-describedby="emailHelp" required>
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control form-control-lg" formControlName="password" id="password"
+                required minlength="8">
+            
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <button ion-button block (click)="btnLogin()" type="submit" [disabled]="!loginForm.valid">Login</button>
+    <!-- <br> -->
+    <hr>
+    <!-- <br> -->
+    <button ion-button block color="secondary" (click)="btnRegister()">Register</button>
 </ion-content>
+<ion-footer>
+    <a href="">Forgot Password</a>
+</ion-footer>
